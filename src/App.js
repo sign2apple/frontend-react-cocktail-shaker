@@ -4,7 +4,8 @@ import Ingredient from "./components/Ingredient";
 import './App.css';
 
 function App() {
-  return (
+
+   return (
     <>
       <Header />
       <div className="middle outer-container">
