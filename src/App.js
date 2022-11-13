@@ -1,26 +1,12 @@
+import React from 'react';
+import Header from './components/Header';
+import Ingredient from "./components/Ingredient";
 import './App.css';
 
 function App() {
   return (
     <>
-      <header id="header" className="outer-container">
-        <div className="header-content inner-container">
-          <h1>The Cocktail Shaker</h1>
-          <nav className="navbar">
-            <ul className="nav-menu">
-              <li>
-                <a className="nav-link" href="#">Ingredients</a>
-              </li>
-              <li>
-                <a className="nav-link" href="#">Cocktails</a>
-              </li>
-              <li>
-                <a className="nav-link" href="#">Cocktail Details</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <Header />
       <div className="middle outer-container">
         <main className="main inner-container">
           <h2>Ingredient Index</h2>
@@ -44,199 +30,199 @@ function App() {
                 <li>
                   <h3>#</h3>
                   <ol>
-                    <li><a href="#">151 proof rum</a></li>
-                    <li><a href="#">7-up</a></li>
+                    <Ingredient name="151 proof rum" />
+                    <Ingredient name="7-up" />
                   </ol>
                 </li>
                 <li>
                   <h3>a</h3>
                   <ol>
-                    <li><a href="#">absinthe</a></li>
-                    <li><a href="#">absolut citron</a></li>
-                    <li><a href="#">absolut kurant</a></li>
-                    <li><a href="#">absolut peppar</a></li>
-                    <li><a href="#">absolut vodka</a></li>
-                    <li><a href="#">advocaat</a></li>
-                    <li><a href="#">aejo rum</a></li>
-                    <li><a href="#">aftershock</a></li>
-                    <li><a href="#">agave syrup</a></li>
-                    <li><a href="#">ale</a></li>
-                    <li><a href="#">allspice</a></li>
-                    <li><a href="#">allspice dram</a></li>
-                    <li><a href="#">almond</a></li>
-                    <li><a href="#">almond flavoring</a></li>
-                    <li><a href="#">amaretto</a></li>
-                    <li><a href="#">amaro montenegro</a></li>
-                    <li><a href="#">angelica root</a></li>
-                    <li><a href="#">angostura bitters</a></li>
-                    <li><a href="#">anis</a></li>
-                    <li><a href="#">anise</a></li>
-                    <li><a href="#">anisette</a></li>
-                    <li><a href="#">aperol</a></li>
-                    <li><a href="#">apfelkorn</a></li>
-                    <li><a href="#">apple</a></li>
-                    <li><a href="#">apple brandy</a></li>
-                    <li><a href="#">apple cider</a></li>
-                    <li><a href="#">apple juice</a></li>
-                    <li><a href="#">apple schnapps</a></li>
-                    <li><a href="#">applejack</a></li>
-                    <li><a href="#">apricot</a></li>
-                    <li><a href="#">apricot brandy</a></li>
-                    <li><a href="#">apricot nectar</a></li>
-                    <li><a href="#">aquavit</a></li>
-                    <li><a href="#">arrack</a></li>
-                    <li><a href="#">asafoetida</a></li>
-                    <li><a href="#">averna</a></li>
-                    <li><a href="#">añejo rum</a></li>
+                    <Ingredient name="absinthe" />
+                    <Ingredient name="absolut citron" />
+                    <Ingredient name="absolut kurant" />
+                    <Ingredient name="absolut peppar" />
+                    <Ingredient name="absolut vodka" />
+                    <Ingredient name="advocaat" />
+                    <Ingredient name="aejo rum" />
+                    <Ingredient name="aftershock" />
+                    <Ingredient name="agave syrup" />
+                    <Ingredient name="ale" />
+                    <Ingredient name="allspice" />
+                    <Ingredient name="allspice dram" />
+                    <Ingredient name="almond" />
+                    <Ingredient name="almond flavoring" />
+                    <Ingredient name="amaretto" />
+                    <Ingredient name="amaro montenegro" />
+                    <Ingredient name="angelica root" />
+                    <Ingredient name="angostura bitters" />
+                    <Ingredient name="anis" />
+                    <Ingredient name="anise" />
+                    <Ingredient name="anisette" />
+                    <Ingredient name="aperol" />
+                    <Ingredient name="apfelkorn" />
+                    <Ingredient name="apple" />
+                    <Ingredient name="apple brandy" />
+                    <Ingredient name="apple cider" />
+                    <Ingredient name="apple juice" />
+                    <Ingredient name="apple schnapps" />
+                    <Ingredient name="applejack" />
+                    <Ingredient name="apricot" />
+                    <Ingredient name="apricot brandy" />
+                    <Ingredient name="apricot nectar" />
+                    <Ingredient name="aquavit" />
+                    <Ingredient name="arrack" />
+                    <Ingredient name="asafoetida" />
+                    <Ingredient name="averna" />
+                    <Ingredient name="añejo rum" />
                   </ol>
                 </li>
                 <li>
                   <h3>b</h3>
                   <ol>
-                    <li><a href="#">bacardi</a></li>
-                    <li><a href="#">bacardi limon</a></li>
-                    <li><a href="#">baileys irish cream</a></li>
-                    <li><a href="#">banana</a></li>
-                    <li><a href="#">banana liqueur</a></li>
-                    <li><a href="#">banana rum</a></li>
-                    <li><a href="#">banana syrup</a></li>
-                    <li><a href="#">barenjager</a></li>
-                    <li><a href="#">basil</a></li>
-                    <li><a href="#">beef stock</a></li>
-                    <li><a href="#">beer</a></li>
-                    <li><a href="#">benedictine</a></li>
-                    <li><a href="#">berries</a></li>
-                    <li><a href="#">bitter lemon</a></li>
-                    <li><a href="#">bitters</a></li>
-                    <li><a href="#">black pepper</a></li>
-                    <li><a href="#">black rum</a></li>
-                    <li><a href="#">black sambuca</a></li>
-                    <li><a href="#">blackberries</a></li>
-                    <li><a href="#">blackberry brandy</a></li>
-                    <li><a href="#">blackberry schnapps</a></li>
-                    <li><a href="#">blackcurrant cordial</a></li>
-                    <li><a href="#">blackcurrant schnapps</a></li>
-                    <li><a href="#">blackcurrant squash</a></li>
-                    <li><a href="#">blackstrap rum</a></li>
-                    <li><a href="#">blended scotch</a></li>
-                    <li><a href="#">blended whiskey</a></li>
-                    <li><a href="#">blood orange</a></li>
-                    <li><a href="#">blue curacao</a></li>
-                    <li><a href="#">blue maui</a></li>
-                    <li><a href="#">blueberries</a></li>
-                    <li><a href="#">blueberry schnapps</a></li>
-                    <li><a href="#">bourbon</a></li>
-                    <li><a href="#">brandy</a></li>
-                    <li><a href="#">brown sugar</a></li>
-                    <li><a href="#">butter</a></li>
-                    <li><a href="#">butterscotch schnapps</a></li>
+                    <Ingredient name="bacardi" />
+                    <Ingredient name="bacardi limon" />
+                    <Ingredient name="baileys irish cream" />
+                    <Ingredient name="banana" />
+                    <Ingredient name="banana liqueur" />
+                    <Ingredient name="banana rum" />
+                    <Ingredient name="banana syrup" />
+                    <Ingredient name="barenjager" />
+                    <Ingredient name="basil" />
+                    <Ingredient name="beef stock" />
+                    <Ingredient name="beer" />
+                    <Ingredient name="benedictine" />
+                    <Ingredient name="berries" />
+                    <Ingredient name="bitter lemon" />
+                    <Ingredient name="bitters" />
+                    <Ingredient name="black pepper" />
+                    <Ingredient name="black rum" />
+                    <Ingredient name="black sambuca" />
+                    <Ingredient name="blackberries" />
+                    <Ingredient name="blackberry brandy" />
+                    <Ingredient name="blackberry schnapps" />
+                    <Ingredient name="blackcurrant cordial" />
+                    <Ingredient name="blackcurrant schnapps" />
+                    <Ingredient name="blackcurrant squash" />
+                    <Ingredient name="blackstrap rum" />
+                    <Ingredient name="blended scotch" />
+                    <Ingredient name="blended whiskey" />
+                    <Ingredient name="blood orange" />
+                    <Ingredient name="blue curacao" />
+                    <Ingredient name="blue maui" />
+                    <Ingredient name="blueberries" />
+                    <Ingredient name="blueberry schnapps" />
+                    <Ingredient name="bourbon" />
+                    <Ingredient name="brandy" />
+                    <Ingredient name="brown sugar" />
+                    <Ingredient name="butter" />
+                    <Ingredient name="butterscotch schnapps" />
                   </ol>
                 </li>
                   <li>
                     <h3>c</h3>
                     <ol>
-                      <li><a href="#">cachaca</a></li>
-                      <li><a href="#">calvados</a></li>
-                      <li><a href="#">campari</a></li>
-                      <li><a href="#">canadian whisky</a></li>
-                      <li><a href="#">candy</a></li>
-                      <li><a href="#">cantaloupe</a></li>
-                      <li><a href="#">caramel coloring</a></li>
-                      <li><a href="#">caramel sauce</a></li>
-                      <li><a href="#">carbonated soft drink</a></li>
-                      <li><a href="#">carbonated water</a></li>
-                      <li><a href="#">cardamom</a></li>
-                      <li><a href="#">cayenne pepper</a></li>
-                      <li><a href="#">celery</a></li>
-                      <li><a href="#">celery salt</a></li>
-                      <li><a href="#">chambord raspberry liqueur</a></li>
-                      <li><a href="#">champagne</a></li>
-                      <li><a href="#">chareau</a></li>
-                      <li><a href="#">cherries</a></li>
-                      <li><a href="#">cherry</a></li>
-                      <li><a href="#">cherry brandy</a></li>
-                      <li><a href="#">cherry cola</a></li>
-                      <li><a href="#">cherry grenadine</a></li>
-                      <li><a href="#">cherry heering</a></li>
-                      <li><a href="#">cherry juice</a></li>
-                      <li><a href="#">cherry liqueur</a></li>
-                      <li><a href="#">chocolate</a></li>
-                      <li><a href="#">chocolate ice-cream</a></li>
-                      <li><a href="#">chocolate liqueur</a></li>
-                      <li><a href="#">chocolate milk</a></li>
-                      <li><a href="#">chocolate sauce</a></li>
-                      <li><a href="#">chocolate syrup</a></li>
-                      <li><a href="#">cider</a></li>
-                      <li><a href="#">cinnamon</a></li>
-                      <li><a href="#">cinnamon schnapps</a></li>
-                      <li><a href="#">cinnamon whisky</a></li>
-                      <li><a href="#">citrus vodka</a></li>
-                      <li><a href="#">clamato juice</a></li>
-                      <li><a href="#">cloves</a></li>
-                      <li><a href="#">club soda</a></li>
-                      <li><a href="#">coca-cola</a></li>
-                      <li><a href="#">cocchi americano</a></li>
-                      <li><a href="#">cocktail onion</a></li>
-                      <li><a href="#">cocoa powder</a></li>
-                      <li><a href="#">coconut cream</a></li>
-                      <li><a href="#">coconut liqueur</a></li>
-                      <li><a href="#">coconut milk</a></li>
-                      <li><a href="#">coconut rum</a></li>
-                      <li><a href="#">coconut syrup</a></li>
-                      <li><a href="#">coffee</a></li>
-                      <li><a href="#">coffee brandy</a></li>
-                      <li><a href="#">coffee liqueur</a></li>
-                      <li><a href="#">cognac</a></li>
-                      <li><a href="#">cointreau</a></li>
-                      <li><a href="#">cola</a></li>
-                      <li><a href="#">cold water</a></li>
-                      <li><a href="#">condensed milk</a></li>
-                      <li><a href="#">coriander</a></li>
-                      <li><a href="#">corn syrup</a></li>
-                      <li><a href="#">cornstarch</a></li>
-                      <li><a href="#">corona</a></li>
-                      <li><a href="#">cranberries</a></li>
-                      <li><a href="#">cranberry juice</a></li>
-                      <li><a href="#">cranberry liqueur</a></li>
-                      <li><a href="#">cranberry vodka</a></li>
-                      <li><a href="#">cream</a></li>
-                      <li><a href="#">cream of coconut</a></li>
-                      <li><a href="#">cream sherry</a></li>
-                      <li><a href="#">cream soda</a></li>
-                      <li><a href="#">creme de almond</a></li>
-                      <li><a href="#">creme de banane</a></li>
-                      <li><a href="#">creme de cacao</a></li>
-                      <li><a href="#">creme de cassis</a></li>
-                      <li><a href="#">creme de mure</a></li>
-                      <li><a href="#">creme de noyaux</a></li>
-                      <li><a href="#">creme de violette</a></li>
-                      <li><a href="#">creme fraiche</a></li>
-                      <li><a href="#">crown royal</a></li>
-                      <li><a href="#">crystal light</a></li>
-                      <li><a href="#">cucumber</a></li>
-                      <li><a href="#">cumin powder</a></li>
-                      <li><a href="#">cumin seed</a></li>
-                      <li><a href="#">curacao</a></li>
-                      <li><a href="#">cynar</a></li>
+                      <Ingredient name="cachaca" />
+                      <Ingredient name="calvados" />
+                      <Ingredient name="campari" />
+                      <Ingredient name="canadian whisky" />
+                      <Ingredient name="candy" />
+                      <Ingredient name="cantaloupe" />
+                      <Ingredient name="caramel coloring" />
+                      <Ingredient name="caramel sauce" />
+                      <Ingredient name="carbonated soft drink" />
+                      <Ingredient name="carbonated water" />
+                      <Ingredient name="cardamom" />
+                      <Ingredient name="cayenne pepper" />
+                      <Ingredient name="celery" />
+                      <Ingredient name="celery salt" />
+                      <Ingredient name="chambord raspberry liqueur" />
+                      <Ingredient name="champagne" />
+                      <Ingredient name="chareau" />
+                      <Ingredient name="cherries" />
+                      <Ingredient name="cherry" />
+                      <Ingredient name="cherry brandy" />
+                      <Ingredient name="cherry cola" />
+                      <Ingredient name="cherry grenadine" />
+                      <Ingredient name="cherry heering" />
+                      <Ingredient name="cherry juice" />
+                      <Ingredient name="cherry liqueur" />
+                      <Ingredient name="chocolate" />
+                      <Ingredient name="chocolate ice-cream" />
+                      <Ingredient name="chocolate liqueur" />
+                      <Ingredient name="chocolate milk" />
+                      <Ingredient name="chocolate sauce" />
+                      <Ingredient name="chocolate syrup" />
+                      <Ingredient name="cider" />
+                      <Ingredient name="cinnamon" />
+                      <Ingredient name="cinnamon schnapps" />
+                      <Ingredient name="cinnamon whisky" />
+                      <Ingredient name="citrus vodka" />
+                      <Ingredient name="clamato juice" />
+                      <Ingredient name="cloves" />
+                      <Ingredient name="club soda" />
+                      <Ingredient name="coca-cola" />
+                      <Ingredient name="cocchi americano" />
+                      <Ingredient name="cocktail onion" />
+                      <Ingredient name="cocoa powder" />
+                      <Ingredient name="coconut cream" />
+                      <Ingredient name="coconut liqueur" />
+                      <Ingredient name="coconut milk" />
+                      <Ingredient name="coconut rum" />
+                      <Ingredient name="coconut syrup" />
+                      <Ingredient name="coffee" />
+                      <Ingredient name="coffee brandy" />
+                      <Ingredient name="coffee liqueur" />
+                      <Ingredient name="cognac" />
+                      <Ingredient name="cointreau" />
+                      <Ingredient name="cola" />
+                      <Ingredient name="cold water" />
+                      <Ingredient name="condensed milk" />
+                      <Ingredient name="coriander" />
+                      <Ingredient name="corn syrup" />
+                      <Ingredient name="cornstarch" />
+                      <Ingredient name="corona" />
+                      <Ingredient name="cranberries" />
+                      <Ingredient name="cranberry juice" />
+                      <Ingredient name="cranberry liqueur" />
+                      <Ingredient name="cranberry vodka" />
+                      <Ingredient name="cream" />
+                      <Ingredient name="cream of coconut" />
+                      <Ingredient name="cream sherry" />
+                      <Ingredient name="cream soda" />
+                      <Ingredient name="creme de almond" />
+                      <Ingredient name="creme de banane" />
+                      <Ingredient name="creme de cacao" />
+                      <Ingredient name="creme de cassis" />
+                      <Ingredient name="creme de mure" />
+                      <Ingredient name="creme de noyaux" />
+                      <Ingredient name="creme de violette" />
+                      <Ingredient name="creme fraiche" />
+                      <Ingredient name="crown royal" />
+                      <Ingredient name="crystal light" />
+                      <Ingredient name="cucumber" />
+                      <Ingredient name="cumin powder" />
+                      <Ingredient name="cumin seed" />
+                      <Ingredient name="curacao" />
+                      <Ingredient name="cynar" />
                     </ol>
                   </li>
                   <li>
                     <h3>d</h3>
                     <ol>
-                      <li><a href="#">daiquiri mix</a></li>
-                      <li><a href="#">dark chocolate</a></li>
-                      <li><a href="#">dark creme de cacao</a></li>
-                      <li><a href="#">dark rum</a></li>
-                      <li><a href="#">dark soy sauce</a></li>
-                      <li><a href="#">demerara sugar</a></li>
-                      <li><a href="#">diet coke</a></li>
-                      <li><a href="#">dr. pepper</a></li>
-                      <li><a href="#">drambuie</a></li>
-                      <li><a href="#">dried oregano</a></li>
-                      <li><a href="#">dry curacao</a></li>
-                      <li><a href="#">dry vermouth</a></li>
-                      <li><a href="#">dubonnet blanc</a></li>
-                      <li><a href="#">dubonnet rouge</a></li>
+                      <Ingredient name="daiquiri mix" />
+                      <Ingredient name="dark chocolate" />
+                      <Ingredient name="dark creme de cacao" />
+                      <Ingredient name="dark rum" />
+                      <Ingredient name="dark soy sauce" />
+                      <Ingredient name="demerara sugar" />
+                      <Ingredient name="diet coke" />
+                      <Ingredient name="dr. pepper" />
+                      <Ingredient name="drambuie" />
+                      <Ingredient name="dried oregano" />
+                      <Ingredient name="dry curacao" />
+                      <Ingredient name="dry vermouth" />
+                      <Ingredient name="dubonnet blanc" />
+                      <Ingredient name="dubonnet rouge" />
                     </ol>
                   </li>
               </ol>
@@ -246,212 +232,212 @@ function App() {
                 <li>
                   <h3>e</h3>
                   <ol>
-                    <li><a href="#">egg</a></li>
-                    <li><a href="#">egg white</a></li>
-                    <li><a href="#">egg yolk</a></li>
-                    <li><a href="#">eggnog</a></li>
-                    <li><a href="#">elderflower cordial</a></li>
-                    <li><a href="#">erin cream</a></li>
-                    <li><a href="#">espresso</a></li>
-                    <li><a href="#">everclear</a></li>
+                    <Ingredient name="egg" />
+                    <Ingredient name="egg white" />
+                    <Ingredient name="egg yolk" />
+                    <Ingredient name="eggnog" />
+                    <Ingredient name="elderflower cordial" />
+                    <Ingredient name="erin cream" />
+                    <Ingredient name="espresso" />
+                    <Ingredient name="everclear" />
                   </ol>
                 </li>
                 <li>
                   <h3>f</h3>
                   <ol>
-                    <li><a href="#">falernum</a></li>
-                    <li><a href="#">fanta</a></li>
-                    <li><a href="#">fennel seeds</a></li>
-                    <li><a href="#">fernet-branca</a></li>
-                    <li><a href="#">figs</a></li>
-                    <li><a href="#">firewater</a></li>
-                    <li><a href="#">flaked almonds</a></li>
-                    <li><a href="#">food coloring</a></li>
-                    <li><a href="#">forbidden fruit</a></li>
-                    <li><a href="#">frangelico</a></li>
-                    <li><a href="#">fresca</a></li>
-                    <li><a href="#">fresh basil</a></li>
-                    <li><a href="#">fresh lemon juice</a></li>
-                    <li><a href="#">fresh lime juice</a></li>
-                    <li><a href="#">fresh mint</a></li>
-                    <li><a href="#">fruit</a></li>
-                    <li><a href="#">fruit juice</a></li>
-                    <li><a href="#">fruit punch</a></li>
+                    <Ingredient name="falernum" />
+                    <Ingredient name="fanta" />
+                    <Ingredient name="fennel seeds" />
+                    <Ingredient name="fernet-branca" />
+                    <Ingredient name="figs" />
+                    <Ingredient name="firewater" />
+                    <Ingredient name="flaked almonds" />
+                    <Ingredient name="food coloring" />
+                    <Ingredient name="forbidden fruit" />
+                    <Ingredient name="frangelico" />
+                    <Ingredient name="fresca" />
+                    <Ingredient name="fresh basil" />
+                    <Ingredient name="fresh lemon juice" />
+                    <Ingredient name="fresh lime juice" />
+                    <Ingredient name="fresh mint" />
+                    <Ingredient name="fruit" />
+                    <Ingredient name="fruit juice" />
+                    <Ingredient name="fruit punch" />
                   </ol>
                 </li>
                 <li>
                   <h3>g</h3>
                   <ol>
-                    <li><a href="#">galliano</a></li>
-                    <li><a href="#">garlic sauce</a></li>
-                    <li><a href="#">gatorade</a></li>
-                    <li><a href="#">gin</a></li>
-                    <li><a href="#">ginger</a></li>
-                    <li><a href="#">ginger ale</a></li>
-                    <li><a href="#">ginger beer</a></li>
-                    <li><a href="#">ginger syrup</a></li>
-                    <li><a href="#">glycerine</a></li>
-                    <li><a href="#">godiva liqueur</a></li>
-                    <li><a href="#">gold rum</a></li>
-                    <li><a href="#">gold tequila</a></li>
-                    <li><a href="#">goldschlager</a></li>
-                    <li><a href="#">grain alcohol</a></li>
-                    <li><a href="#">grand marnier</a></li>
-                    <li><a href="#">granulated sugar</a></li>
-                    <li><a href="#">grape juice</a></li>
-                    <li><a href="#">grape soda</a></li>
-                    <li><a href="#">grapefruit juice</a></li>
-                    <li><a href="#">grapes</a></li>
-                    <li><a href="#">green chartreuse</a></li>
-                    <li><a href="#">green creme de menthe</a></li>
-                    <li><a href="#">green ginger wine</a></li>
-                    <li><a href="#">green olives</a></li>
-                    <li><a href="#">grenadine</a></li>
-                    <li><a href="#">ground ginger</a></li>
-                    <li><a href="#">guava juice</a></li>
-                    <li><a href="#">guinness</a></li>
-                    <li><a href="#">guinness stout</a></li>
+                    <Ingredient name="galliano" />
+                    <Ingredient name="garlic sauce" />
+                    <Ingredient name="gatorade" />
+                    <Ingredient name="gin" />
+                    <Ingredient name="ginger" />
+                    <Ingredient name="ginger ale" />
+                    <Ingredient name="ginger beer" />
+                    <Ingredient name="ginger syrup" />
+                    <Ingredient name="glycerine" />
+                    <Ingredient name="godiva liqueur" />
+                    <Ingredient name="gold rum" />
+                    <Ingredient name="gold tequila" />
+                    <Ingredient name="goldschlager" />
+                    <Ingredient name="grain alcohol" />
+                    <Ingredient name="grand marnier" />
+                    <Ingredient name="granulated sugar" />
+                    <Ingredient name="grape juice" />
+                    <Ingredient name="grape soda" />
+                    <Ingredient name="grapefruit juice" />
+                    <Ingredient name="grapes" />
+                    <Ingredient name="green chartreuse" />
+                    <Ingredient name="green creme de menthe" />
+                    <Ingredient name="green ginger wine" />
+                    <Ingredient name="green olives" />
+                    <Ingredient name="grenadine" />
+                    <Ingredient name="ground ginger" />
+                    <Ingredient name="guava juice" />
+                    <Ingredient name="guinness" />
+                    <Ingredient name="guinness stout" />
                   </ol>
                 </li>
                 <li>
                   <h3>h</h3>
                   <ol>
-                    <li><a href="#">habanero peppers</a></li>
-                    <li><a href="#">half-and-half</a></li>
-                    <li><a href="#">hawaiian punch</a></li>
-                    <li><a href="#">hazelnut liqueur</a></li>
-                    <li><a href="#">heavy cream</a></li>
-                    <li><a href="#">honey</a></li>
-                    <li><a href="#">honey syrup</a></li>
-                    <li><a href="#">hooch</a></li>
-                    <li><a href="#">hot chocolate</a></li>
-                    <li><a href="#">hot damn</a></li>
-                    <li><a href="#">hot sauce</a></li>
-                    <li><a href="#">hpnotiq</a></li>
+                    <Ingredient name="habanero peppers" />
+                    <Ingredient name="half-and-half" />
+                    <Ingredient name="hawaiian punch" />
+                    <Ingredient name="hazelnut liqueur" />
+                    <Ingredient name="heavy cream" />
+                    <Ingredient name="honey" />
+                    <Ingredient name="honey syrup" />
+                    <Ingredient name="hooch" />
+                    <Ingredient name="hot chocolate" />
+                    <Ingredient name="hot damn" />
+                    <Ingredient name="hot sauce" />
+                    <Ingredient name="hpnotiq" />
                   </ol>
                 </li>
                 <li>
                   <h3>i</h3>
                   <ol>
-                    <li><a href="#">ice</a></li>
-                    <li><a href="#">ice-cream</a></li>
-                    <li><a href="#">iced tea</a></li>
-                    <li><a href="#">ilegal joven mezcal</a></li>
-                    <li><a href="#">irish cream</a></li>
-                    <li><a href="#">irish whiskey</a></li>
-                    <li><a href="#">islay single malt scotch</a></li>
+                    <Ingredient name="ice" />
+                    <Ingredient name="ice-cream" />
+                    <Ingredient name="iced tea" />
+                    <Ingredient name="ilegal joven mezcal" />
+                    <Ingredient name="irish cream" />
+                    <Ingredient name="irish whiskey" />
+                    <Ingredient name="islay single malt scotch" />
                   </ol>
                 </li>
                 <li>
                   <h3>j</h3>
                   <ol>
-                    <li><a href="#">jack daniels</a></li>
-                    <li><a href="#">jagermeister</a></li>
-                    <li><a href="#">jello</a></li>
-                    <li><a href="#">jelly</a></li>
-                    <li><a href="#">jim beam</a></li>
-                    <li><a href="#">johnnie walker</a></li>
+                    <Ingredient name="jack daniels" />
+                    <Ingredient name="jagermeister" />
+                    <Ingredient name="jello" />
+                    <Ingredient name="jelly" />
+                    <Ingredient name="jim beam" />
+                    <Ingredient name="johnnie walker" />
                   </ol>
                 </li>
                 <li>
                   <h3>k</h3>
                   <ol>
-                    <li><a href="#">kahlua</a></li>
-                    <li><a href="#">key largo schnapps</a></li>
-                    <li><a href="#">kirschwasser</a></li>
-                    <li><a href="#">kiwi</a></li>
-                    <li><a href="#">kiwi liqueur</a></li>
-                    <li><a href="#">kool-aid</a></li>
-                    <li><a href="#">kummel</a></li>
+                    <Ingredient name="kahlua" />
+                    <Ingredient name="key largo schnapps" />
+                    <Ingredient name="kirschwasser" />
+                    <Ingredient name="kiwi" />
+                    <Ingredient name="kiwi liqueur" />
+                    <Ingredient name="kool-aid" />
+                    <Ingredient name="kummel" />
                   </ol>
                 </li>
                 <li>
                   <h3>l</h3>
                   <ol>
-                    <li><a href="#">lager</a></li>
-                    <li><a href="#">lavender</a></li>
-                    <li><a href="#">lemon</a></li>
-                    <li><a href="#">lemon juice</a></li>
-                    <li><a href="#">lemon peel</a></li>
-                    <li><a href="#">lemon soda</a></li>
-                    <li><a href="#">lemon vodka</a></li>
-                    <li><a href="#">lemon-lime</a></li>
-                    <li><a href="#">lemon-lime soda</a></li>
-                    <li><a href="#">lemonade</a></li>
-                    <li><a href="#">licorice root</a></li>
-                    <li><a href="#">light cream</a></li>
-                    <li><a href="#">light rum</a></li>
-                    <li><a href="#">lillet</a></li>
-                    <li><a href="#">lillet blanc</a></li>
-                    <li><a href="#">lime</a></li>
-                    <li><a href="#">lime juice</a></li>
-                    <li><a href="#">lime juice cordial</a></li>
-                    <li><a href="#">lime liqueur</a></li>
-                    <li><a href="#">lime peel</a></li>
-                    <li><a href="#">lime vodka</a></li>
-                    <li><a href="#">limeade</a></li>
+                    <Ingredient name="lager" />
+                    <Ingredient name="lavender" />
+                    <Ingredient name="lemon" />
+                    <Ingredient name="lemon juice" />
+                    <Ingredient name="lemon peel" />
+                    <Ingredient name="lemon soda" />
+                    <Ingredient name="lemon vodka" />
+                    <Ingredient name="lemon-lime" />
+                    <Ingredient name="lemon-lime soda" />
+                    <Ingredient name="lemonade" />
+                    <Ingredient name="licorice root" />
+                    <Ingredient name="light cream" />
+                    <Ingredient name="light rum" />
+                    <Ingredient name="lillet" />
+                    <Ingredient name="lillet blanc" />
+                    <Ingredient name="lime" />
+                    <Ingredient name="lime juice" />
+                    <Ingredient name="lime juice cordial" />
+                    <Ingredient name="lime liqueur" />
+                    <Ingredient name="lime peel" />
+                    <Ingredient name="lime vodka" />
+                    <Ingredient name="limeade" />
                   </ol>
                 </li>
                 <li>
                   <h3>m</h3>
                   <ol>
-                    <li><a href="#">madeira</a></li>
-                    <li><a href="#">malibu rum</a></li>
-                    <li><a href="#">mandarin</a></li>
-                    <li><a href="#">mandarine napoleon</a></li>
-                    <li><a href="#">mango</a></li>
-                    <li><a href="#">maple syrup</a></li>
-                    <li><a href="#">maraschino cherry</a></li>
-                    <li><a href="#">maraschino cherry juice</a></li>
-                    <li><a href="#">maraschino liqueur</a></li>
-                    <li><a href="#">margarita mix</a></li>
-                    <li><a href="#">marjoram leaves</a></li>
-                    <li><a href="#">marshmallows</a></li>
-                    <li><a href="#">martini bianco</a></li>
-                    <li><a href="#">martini extra dry</a></li>
-                    <li><a href="#">martini rosso</a></li>
-                    <li><a href="#">maui</a></li>
-                    <li><a href="#">melon liqueur</a></li>
-                    <li><a href="#">melon vodka</a></li>
-                    <li><a href="#">mezcal</a></li>
-                    <li><a href="#">midori</a></li>
-                    <li><a href="#">midori melon liqueur</a></li>
-                    <li><a href="#">milk</a></li>
-                    <li><a href="#">mini-snickers bars</a></li>
-                    <li><a href="#">mint</a></li>
-                    <li><a href="#">mint syrup</a></li>
-                    <li><a href="#">mountain dew</a></li>
+                    <Ingredient name="madeira" />
+                    <Ingredient name="malibu rum" />
+                    <Ingredient name="mandarin" />
+                    <Ingredient name="mandarine napoleon" />
+                    <Ingredient name="mango" />
+                    <Ingredient name="maple syrup" />
+                    <Ingredient name="maraschino cherry" />
+                    <Ingredient name="maraschino cherry juice" />
+                    <Ingredient name="maraschino liqueur" />
+                    <Ingredient name="margarita mix" />
+                    <Ingredient name="marjoram leaves" />
+                    <Ingredient name="marshmallows" />
+                    <Ingredient name="martini bianco" />
+                    <Ingredient name="martini extra dry" />
+                    <Ingredient name="martini rosso" />
+                    <Ingredient name="maui" />
+                    <Ingredient name="melon liqueur" />
+                    <Ingredient name="melon vodka" />
+                    <Ingredient name="mezcal" />
+                    <Ingredient name="midori" />
+                    <Ingredient name="midori melon liqueur" />
+                    <Ingredient name="milk" />
+                    <Ingredient name="mini-snickers bars" />
+                    <Ingredient name="mint" />
+                    <Ingredient name="mint syrup" />
+                    <Ingredient name="mountain dew" />
                   </ol>
                 </li>
                 <li>
                   <h3>n</h3>
                   <ol>
-                    <li><a href="#">nocino</a></li>
-                    <li><a href="#">nutmeg</a></li>
+                    <Ingredient name="nocino" />
+                    <Ingredient name="nutmeg" />
                   </ol>
                 </li>
                 <li>
                   <h3>o</h3>
                   <ol>
-                    <li><a href="#">olive</a></li>
-                    <li><a href="#">olive brine</a></li>
-                    <li><a href="#">olive oil</a></li>
-                    <li><a href="#">onion</a></li>
-                    <li><a href="#">orange</a></li>
-                    <li><a href="#">orange bitters</a></li>
-                    <li><a href="#">orange curacao</a></li>
-                    <li><a href="#">orange juice</a></li>
-                    <li><a href="#">orange liqueur</a></li>
-                    <li><a href="#">orange peel</a></li>
-                    <li><a href="#">orange rum</a></li>
-                    <li><a href="#">orange slice</a></li>
-                    <li><a href="#">orange soda</a></li>
-                    <li><a href="#">orange spiral</a></li>
-                    <li><a href="#">orange vodka</a></li>
-                    <li><a href="#">oreo cookie</a></li>
-                    <li><a href="#">orgeat syrup</a></li>
-                    <li><a href="#">ouzo</a></li>
-                    <li><a href="#">oyster sauce</a></li>
+                    <Ingredient name="olive" />
+                    <Ingredient name="olive brine" />
+                    <Ingredient name="olive oil" />
+                    <Ingredient name="onion" />
+                    <Ingredient name="orange" />
+                    <Ingredient name="orange bitters" />
+                    <Ingredient name="orange curacao" />
+                    <Ingredient name="orange juice" />
+                    <Ingredient name="orange liqueur" />
+                    <Ingredient name="orange peel" />
+                    <Ingredient name="orange rum" />
+                    <Ingredient name="orange slice" />
+                    <Ingredient name="orange soda" />
+                    <Ingredient name="orange spiral" />
+                    <Ingredient name="orange vodka" />
+                    <Ingredient name="oreo cookie" />
+                    <Ingredient name="orgeat syrup" />
+                    <Ingredient name="ouzo" />
+                    <Ingredient name="oyster sauce" />
                   </ol>
                 </li>
               </ol>
@@ -461,201 +447,201 @@ function App() {
                 <li>
                   <h3>p</h3>
                   <ol>
-                    <li><a href="#">papaya</a></li>
-                    <li><a href="#">papaya juice</a></li>
-                    <li><a href="#">parfait amour</a></li>
-                    <li><a href="#">passion fruit juice</a></li>
-                    <li><a href="#">passion fruit syrup</a></li>
-                    <li><a href="#">passoa</a></li>
-                    <li><a href="#">peach</a></li>
-                    <li><a href="#">peach bitters</a></li>
-                    <li><a href="#">peach brandy</a></li>
-                    <li><a href="#">peach juice</a></li>
-                    <li><a href="#">peach liqueur</a></li>
-                    <li><a href="#">peach nectar</a></li>
-                    <li><a href="#">peach schnapps</a></li>
-                    <li><a href="#">peach vodka</a></li>
-                    <li><a href="#">peachtree schnapps</a></li>
-                    <li><a href="#">peanut oil</a></li>
-                    <li><a href="#">pepper</a></li>
-                    <li><a href="#">peppermint extract</a></li>
-                    <li><a href="#">peppermint schnapps</a></li>
-                    <li><a href="#">pepsi cola</a></li>
-                    <li><a href="#">pernod</a></li>
-                    <li><a href="#">peychaud bitters</a></li>
-                    <li><a href="#">pina colada mix</a></li>
-                    <li><a href="#">pineapple</a></li>
-                    <li><a href="#">pineapple juice</a></li>
-                    <li><a href="#">pineapple rum</a></li>
-                    <li><a href="#">pineapple syrup</a></li>
-                    <li><a href="#">pineapple vodka</a></li>
-                    <li><a href="#">pineapple-orange-banana juice</a></li>
-                    <li><a href="#">pink lemonade</a></li>
-                    <li><a href="#">pisang ambon</a></li>
-                    <li><a href="#">pisco</a></li>
-                    <li><a href="#">plain chocolate</a></li>
-                    <li><a href="#">plain flour</a></li>
-                    <li><a href="#">plums</a></li>
-                    <li><a href="#">pomegranate juice</a></li>
-                    <li><a href="#">port</a></li>
-                    <li><a href="#">powdered sugar</a></li>
-                    <li><a href="#">prosecco</a></li>
-                    <li><a href="#">purple passion</a></li>
+                    <Ingredient name="papaya" />
+                    <Ingredient name="papaya juice" />
+                    <Ingredient name="parfait amour" />
+                    <Ingredient name="passion fruit juice" />
+                    <Ingredient name="passion fruit syrup" />
+                    <Ingredient name="passoa" />
+                    <Ingredient name="peach" />
+                    <Ingredient name="peach bitters" />
+                    <Ingredient name="peach brandy" />
+                    <Ingredient name="peach juice" />
+                    <Ingredient name="peach liqueur" />
+                    <Ingredient name="peach nectar" />
+                    <Ingredient name="peach schnapps" />
+                    <Ingredient name="peach vodka" />
+                    <Ingredient name="peachtree schnapps" />
+                    <Ingredient name="peanut oil" />
+                    <Ingredient name="pepper" />
+                    <Ingredient name="peppermint extract" />
+                    <Ingredient name="peppermint schnapps" />
+                    <Ingredient name="pepsi cola" />
+                    <Ingredient name="pernod" />
+                    <Ingredient name="peychaud bitters" />
+                    <Ingredient name="pina colada mix" />
+                    <Ingredient name="pineapple" />
+                    <Ingredient name="pineapple juice" />
+                    <Ingredient name="pineapple rum" />
+                    <Ingredient name="pineapple syrup" />
+                    <Ingredient name="pineapple vodka" />
+                    <Ingredient name="pineapple-orange-banana juice" />
+                    <Ingredient name="pink lemonade" />
+                    <Ingredient name="pisang ambon" />
+                    <Ingredient name="pisco" />
+                    <Ingredient name="plain chocolate" />
+                    <Ingredient name="plain flour" />
+                    <Ingredient name="plums" />
+                    <Ingredient name="pomegranate juice" />
+                    <Ingredient name="port" />
+                    <Ingredient name="powdered sugar" />
+                    <Ingredient name="prosecco" />
+                    <Ingredient name="purple passion" />
                   </ol>
                 </li>
                 <li>
                   <h3>r</h3>
                   <ol>
-                    <li><a href="#">raisins</a></li>
-                    <li><a href="#">ramazzotti</a></li>
-                    <li><a href="#">raspberry cordial</a></li>
-                    <li><a href="#">raspberry jam</a></li>
-                    <li><a href="#">raspberry juice</a></li>
-                    <li><a href="#">raspberry liqueur</a></li>
-                    <li><a href="#">raspberry schnapps</a></li>
-                    <li><a href="#">raspberry syrup</a></li>
-                    <li><a href="#">raspberry vodka</a></li>
-                    <li><a href="#">red bull</a></li>
-                    <li><a href="#">red chile flakes</a></li>
-                    <li><a href="#">red chili flakes</a></li>
-                    <li><a href="#">red hot chili flakes</a></li>
-                    <li><a href="#">red wine</a></li>
-                    <li><a href="#">rhubarb</a></li>
-                    <li><a href="#">ricard</a></li>
-                    <li><a href="#">rock salt</a></li>
-                    <li><a href="#">root beer</a></li>
-                    <li><a href="#">root beer schnapps</a></li>
-                    <li><a href="#">rose</a></li>
-                    <li><a href="#">rosemary</a></li>
-                    <li><a href="#">rosemary syrup</a></li>
-                    <li><a href="#">roses sweetened lime juice</a></li>
-                    <li><a href="#">rosewater</a></li>
-                    <li><a href="#">rosso vermouth</a></li>
-                    <li><a href="#">ruby port</a></li>
-                    <li><a href="#">rum</a></li>
-                    <li><a href="#">rumple minze</a></li>
-                    <li><a href="#">rye whiskey</a></li>
+                    <Ingredient name="raisins" />
+                    <Ingredient name="ramazzotti" />
+                    <Ingredient name="raspberry cordial" />
+                    <Ingredient name="raspberry jam" />
+                    <Ingredient name="raspberry juice" />
+                    <Ingredient name="raspberry liqueur" />
+                    <Ingredient name="raspberry schnapps" />
+                    <Ingredient name="raspberry syrup" />
+                    <Ingredient name="raspberry vodka" />
+                    <Ingredient name="red bull" />
+                    <Ingredient name="red chile flakes" />
+                    <Ingredient name="red chili flakes" />
+                    <Ingredient name="red hot chili flakes" />
+                    <Ingredient name="red wine" />
+                    <Ingredient name="rhubarb" />
+                    <Ingredient name="ricard" />
+                    <Ingredient name="rock salt" />
+                    <Ingredient name="root beer" />
+                    <Ingredient name="root beer schnapps" />
+                    <Ingredient name="rose" />
+                    <Ingredient name="rosemary" />
+                    <Ingredient name="rosemary syrup" />
+                    <Ingredient name="roses sweetened lime juice" />
+                    <Ingredient name="rosewater" />
+                    <Ingredient name="rosso vermouth" />
+                    <Ingredient name="ruby port" />
+                    <Ingredient name="rum" />
+                    <Ingredient name="rumple minze" />
+                    <Ingredient name="rye whiskey" />
                   </ol>
                 </li>
                 <li>
                   <h3>s</h3>
                   <ol>
-                    <li><a href="#">sake</a></li>
-                    <li><a href="#">salt</a></li>
-                    <li><a href="#">salted chocolate</a></li>
-                    <li><a href="#">sambuca</a></li>
-                    <li><a href="#">sarsaparilla</a></li>
-                    <li><a href="#">schnapps</a></li>
-                    <li><a href="#">schweppes lemon</a></li>
-                    <li><a href="#">schweppes russchian</a></li>
-                    <li><a href="#">scotch</a></li>
-                    <li><a href="#">sherbet</a></li>
-                    <li><a href="#">sherry</a></li>
-                    <li><a href="#">singani</a></li>
-                    <li><a href="#">sirup of roses</a></li>
-                    <li><a href="#">sloe gin</a></li>
-                    <li><a href="#">soda water</a></li>
-                    <li><a href="#">sour apple pucker</a></li>
-                    <li><a href="#">sour mix</a></li>
-                    <li><a href="#">southern comfort</a></li>
-                    <li><a href="#">soy milk</a></li>
-                    <li><a href="#">soy sauce</a></li>
-                    <li><a href="#">soya milk</a></li>
-                    <li><a href="#">soya sauce</a></li>
-                    <li><a href="#">spiced rum</a></li>
-                    <li><a href="#">sprite</a></li>
-                    <li><a href="#">squeezed orange</a></li>
-                    <li><a href="#">squirt</a></li>
-                    <li><a href="#">st. germain</a></li>
-                    <li><a href="#">strawberries</a></li>
-                    <li><a href="#">strawberry juice</a></li>
-                    <li><a href="#">strawberry liqueur</a></li>
-                    <li><a href="#">strawberry schnapps</a></li>
-                    <li><a href="#">strawberry syrup</a></li>
-                    <li><a href="#">sugar</a></li>
-                    <li><a href="#">sugar syrup</a></li>
-                    <li><a href="#">sunny delight</a></li>
-                    <li><a href="#">surge</a></li>
-                    <li><a href="#">swedish punsch</a></li>
-                    <li><a href="#">sweet and sour</a></li>
-                    <li><a href="#">sweet cream</a></li>
-                    <li><a href="#">sweet vermouth</a></li>
+                    <Ingredient name="sake" />
+                    <Ingredient name="salt" />
+                    <Ingredient name="salted chocolate" />
+                    <Ingredient name="sambuca" />
+                    <Ingredient name="sarsaparilla" />
+                    <Ingredient name="schnapps" />
+                    <Ingredient name="schweppes lemon" />
+                    <Ingredient name="schweppes russchian" />
+                    <Ingredient name="scotch" />
+                    <Ingredient name="sherbet" />
+                    <Ingredient name="sherry" />
+                    <Ingredient name="singani" />
+                    <Ingredient name="sirup of roses" />
+                    <Ingredient name="sloe gin" />
+                    <Ingredient name="soda water" />
+                    <Ingredient name="sour apple pucker" />
+                    <Ingredient name="sour mix" />
+                    <Ingredient name="southern comfort" />
+                    <Ingredient name="soy milk" />
+                    <Ingredient name="soy sauce" />
+                    <Ingredient name="soya milk" />
+                    <Ingredient name="soya sauce" />
+                    <Ingredient name="spiced rum" />
+                    <Ingredient name="sprite" />
+                    <Ingredient name="squeezed orange" />
+                    <Ingredient name="squirt" />
+                    <Ingredient name="st. germain" />
+                    <Ingredient name="strawberries" />
+                    <Ingredient name="strawberry juice" />
+                    <Ingredient name="strawberry liqueur" />
+                    <Ingredient name="strawberry schnapps" />
+                    <Ingredient name="strawberry syrup" />
+                    <Ingredient name="sugar" />
+                    <Ingredient name="sugar syrup" />
+                    <Ingredient name="sunny delight" />
+                    <Ingredient name="surge" />
+                    <Ingredient name="swedish punsch" />
+                    <Ingredient name="sweet and sour" />
+                    <Ingredient name="sweet cream" />
+                    <Ingredient name="sweet vermouth" />
                   </ol>
                 </li>
                 <li>
                   <h3>t</h3>
                   <ol>
-                    <li><a href="#">tabasco sauce</a></li>
-                    <li><a href="#">tajin</a></li>
-                    <li><a href="#">tang</a></li>
-                    <li><a href="#">tawny port</a></li>
-                    <li><a href="#">tea</a></li>
-                    <li><a href="#">tennessee whiskey</a></li>
-                    <li><a href="#">tequila</a></li>
-                    <li><a href="#">tequila rose</a></li>
-                    <li><a href="#">thyme</a></li>
-                    <li><a href="#">tia maria</a></li>
-                    <li><a href="#">tomato</a></li>
-                    <li><a href="#">tomato juice</a></li>
-                    <li><a href="#">tonic water</a></li>
-                    <li><a href="#">triple sec</a></li>
-                    <li><a href="#">tropicana</a></li>
-                    <li><a href="#">tuaca</a></li>
+                    <Ingredient name="tabasco sauce" />
+                    <Ingredient name="tajin" />
+                    <Ingredient name="tang" />
+                    <Ingredient name="tawny port" />
+                    <Ingredient name="tea" />
+                    <Ingredient name="tennessee whiskey" />
+                    <Ingredient name="tequila" />
+                    <Ingredient name="tequila rose" />
+                    <Ingredient name="thyme" />
+                    <Ingredient name="tia maria" />
+                    <Ingredient name="tomato" />
+                    <Ingredient name="tomato juice" />
+                    <Ingredient name="tonic water" />
+                    <Ingredient name="triple sec" />
+                    <Ingredient name="tropicana" />
+                    <Ingredient name="tuaca" />
                   </ol>
                 </li>
                 <li>
                   <h3>v</h3>
                   <ol>
-                    <li><a href="#">vanilla</a></li>
-                    <li><a href="#">vanilla extract</a></li>
-                    <li><a href="#">vanilla ice-cream</a></li>
-                    <li><a href="#">vanilla liqueur</a></li>
-                    <li><a href="#">vanilla schnapps</a></li>
-                    <li><a href="#">vanilla syrup</a></li>
-                    <li><a href="#">vanilla vodka</a></li>
-                    <li><a href="#">vermouth</a></li>
-                    <li><a href="#">vinegar</a></li>
-                    <li><a href="#">vodka</a></li>
+                    <Ingredient name="vanilla" />
+                    <Ingredient name="vanilla extract" />
+                    <Ingredient name="vanilla ice-cream" />
+                    <Ingredient name="vanilla liqueur" />
+                    <Ingredient name="vanilla schnapps" />
+                    <Ingredient name="vanilla syrup" />
+                    <Ingredient name="vanilla vodka" />
+                    <Ingredient name="vermouth" />
+                    <Ingredient name="vinegar" />
+                    <Ingredient name="vodka" />
                   </ol>
                 </li>
                 <li>
                   <h3>w</h3>
                   <ol>
-                    <li><a href="#">water</a></li>
-                    <li><a href="#">watermelon</a></li>
-                    <li><a href="#">watermelon schnapps</a></li>
-                    <li><a href="#">whipped cream</a></li>
-                    <li><a href="#">whipping cream</a></li>
-                    <li><a href="#">whiskey</a></li>
-                    <li><a href="#">whisky</a></li>
-                    <li><a href="#">white chocolate liqueur</a></li>
-                    <li><a href="#">white creme de menthe</a></li>
-                    <li><a href="#">white grape juice</a></li>
-                    <li><a href="#">white port</a></li>
-                    <li><a href="#">white rum</a></li>
-                    <li><a href="#">white vermouth</a></li>
-                    <li><a href="#">white vinegar</a></li>
-                    <li><a href="#">white wine</a></li>
-                    <li><a href="#">wild turkey</a></li>
-                    <li><a href="#">wildberry schnapps</a></li>
-                    <li><a href="#">wine</a></li>
-                    <li><a href="#">worcestershire sauce</a></li>
-                    <li><a href="#">wormwood</a></li>
+                    <Ingredient name="water" />
+                    <Ingredient name="watermelon" />
+                    <Ingredient name="watermelon schnapps" />
+                    <Ingredient name="whipped cream" />
+                    <Ingredient name="whipping cream" />
+                    <Ingredient name="whiskey" />
+                    <Ingredient name="whisky" />
+                    <Ingredient name="white chocolate liqueur" />
+                    <Ingredient name="white creme de menthe" />
+                    <Ingredient name="white grape juice" />
+                    <Ingredient name="white port" />
+                    <Ingredient name="white rum" />
+                    <Ingredient name="white vermouth" />
+                    <Ingredient name="white vinegar" />
+                    <Ingredient name="white wine" />
+                    <Ingredient name="wild turkey" />
+                    <Ingredient name="wildberry schnapps" />
+                    <Ingredient name="wine" />
+                    <Ingredient name="worcestershire sauce" />
+                    <Ingredient name="wormwood" />
                   </ol>
                 </li>
                 <li>
                   <h3>y</h3>
                   <ol>
-                    <li><a href="#">yeast</a></li>
-                    <li><a href="#">yellow chartreuse</a></li>
-                    <li><a href="#">yoghurt</a></li>
-                    <li><a href="#">yukon jack</a></li>
+                    <Ingredient name="yeast" />
+                    <Ingredient name="yellow chartreuse" />
+                    <Ingredient name="yoghurt" />
+                    <Ingredient name="yukon jack" />
                   </ol>
                 </li>
                 <li>
                   <h3>z</h3>
                   <ol>
-                    <li><a href="#">zima</a></li>
+                    <Ingredient name="zima" />
                   </ol>
                 </li>
               </ol>
@@ -666,11 +652,11 @@ function App() {
           <div className="sidebar-content">
             <h4>Ingredients</h4>
             <ul className="ingredients-list">
-              <li><a href="#">Applejack</a></li>
-              <li><a href="#">Gin</a></li>
-              <li><a href="#">Dark rum</a></li>
-              <li><a href="#">Sweet Vermouth</a></li>
-              <li><a href="#">Strawberry schnapps</a></li>
+              <Ingredient name="Applejack" />
+              <Ingredient name="Gin" />
+              <Ingredient name="Dark rum" />
+              <Ingredient name="Sweet Vermouth" />
+              <Ingredient name="Strawberry schnapps" />
             </ul>
           </div>
         </aside>
