@@ -1,38 +1,252 @@
-.App {
-  text-align: center;
+/*////////////////////////
+    Table of Contents
+    1. Global Styles
+    2. Typography
+    3. Layout
+        3.1 Reusables
+        3.2 Other
+    4. Areas
+        4.1 Header
+        4.2 Introduction
+        4.3 Work
+        4.4 Services
+        4.5 Contact
+        4.6 Footer
+    5. Media Queries
+////////////////////////*/
+
+/* ------------------------------- 1. Global Styles -------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+    --white: #fff;
+    --color-link-hover: #0056b3;
+
+    /* https://coolors.co/cad2c5-84a98c-52796f-354f52-2f3e46 */
+    --ash-gray: #cad2c5ff;
+    --dark-sea-green: #84a98cff;
+    --hookers-green: #52796fff;
+    --dark-slate-gray: #354f52ff;
+    --charcoal: #2f3e46ff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    color: var(--hookers-green);
+    font-family: "Helvetica", Arial, "Times New Roman", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.618;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* ------------------------------- 2. Typography ----------------------------------- */
+
+p {
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+h1, h2, h3, h4 {
+    font-family: "Times New Roman", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    color: var(--charcoal);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 29px;
+    font-weight: 100;
+    margin-bottom: 40px;
+    letter-spacing: 4px;
+}
+
+h3 {
+    font-family: "Helvetica", Arial, "Times New Roman", sans-serif;
+    padding: 10px 0;
+    font-size: 25px;
+}
+
+h4 {
+    font-size: 22px;
+    letter-spacing: 1px;
+    line-height: 36px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* ------------------------------- 3. Layout --------------------------------------- */
+
+/* --------------- 3.1 Reusables ----------------------- */
+
+.outer-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.inner-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex-shrink: 1;
+    flex-grow: 0;
+}
+
+/* --------------- 3.2 Other --------------------------- */
+
+a,
+a:link,
+a:visited {
+    color: var(--dark-slate-gray);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+
+/* ------------------------------- 4. Areas ---------------------------------------- */
+
+/* --------------- 4.1 Header ------------------------- */
+
+#header {
+    border-bottom: 1px solid var(--ash-gray);
+}
+
+.header-content {
+    align-items: center;
+    margin: 0 20px;
+}
+
+h1 {
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-top: 40px;
+    border-top: 2px solid var(--dark-sea-green);
+    border-bottom: 2px solid var(--dark-sea-green);
+}
+
+.nav-menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 20px 0;
+    margin-bottom: 55px;
+}
+
+.nav-menu a {
+    padding: 0 20px;
+    color: var(--dark-slate-gray);
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 100;
+    text-decoration: none;
+}
+
+.nav-menu a:hover {
+    color: var(--dark-sea-green);
+    text-decoration: underline;
+}
+
+/* --------------- 4.2 Main --------------------------- */
+
+.main {
+    padding-top: 40px;
+    margin: 0 20px;
+}
+
+.ingredients-container {
+    justify-content: space-between;
+}
+
+.ingredients-container h3 {
+    text-transform: uppercase;
+}
+
+.ingredients-column {
+    margin: 0;
+}
+
+.ingredients-column ol {
+    margin-bottom: 10px;
+}
+
+.ingredients-list * {
+    list-style: none;
+}
+
+.ingredients-list a {
+    text-transform: capitalize;
+}
+
+/* --------------- 4.4 Sidebar------------------------ */
+
+.sidebar {
+    padding: 20px 20px;
+}
+
+.sidebar-content {
+    padding: 20px 20px;
+    border: 1px solid var(--dark-slate-gray);
+}
+
+/* --------------- 4.5 Footer ------------------------- */
+
+#footer {
+    margin-top: 20px;
+    background-color: var(--charcoal);
+}
+
+.footer-content {
+    align-items: center;
+    color: var(--white);
+    margin: 0 20px;
+}
+
+/* ------------------------------- 5. Media Queries -------------------------------- */
+@media screen and (min-width: 900px) {
+    h1 {
+        font-size: 65px;
+    }
+
+    .nav-menu a {
+        font-size: 12px;
+        padding: 0 30px;
+    }
+
+    .header-content, .footer-content {
+        flex-basis: 1200px;
+    }
+
+    .main {
+        flex-basis: 900px;
+        border-right: 1px solid var(--ash-gray);
+        padding-right: 20px;
+    }
+
+    .ingredients-column {
+        flex-basis: 250px;
+    }
+
+    .sidebar {
+        flex-basis: 260px;
+    }
+
+    .sidebar-content {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 40px;
+    }
 }
