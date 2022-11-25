@@ -1,4 +1,8 @@
 import React from 'react';
+import {
+    Routes,
+    Route,
+} from "react-router-dom";
 import Header from './components/Header';
 import './App.css';
 import Home from "./pages/home/Home";
@@ -11,9 +15,11 @@ function App() {
         <>
             <Header/>
             <div className="middle outer-container">
-                <Home/>
-                <Cocktails/>
-                <CocktailDetails/>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/cocktails" element={<Cocktails/>}/>
+                    <Route path="/cocktail-details" element={<CocktailDetails/>}/>
+                </Routes>
             </div>
             <footer id="footer" className="outer-container">
                 <div className="footer-content inner-container">
@@ -21,8 +27,7 @@ function App() {
                 </div>
             </footer>
         </>
-    )
-        ;
+    );
 }
 
 export default App;
