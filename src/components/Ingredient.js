@@ -9,7 +9,7 @@ function Ingredient({name}){
 
     return (
 
-        <li>
+        <li key={name}>
             <a href="/" onClick={logIngredient}>{name}</a>
         </li>
 

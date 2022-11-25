@@ -9,13 +9,13 @@ function Header(){
                 <nav className="navbar">
                     <ul className="nav-menu">
                         <li>
-                            <a className="nav-link" href="#">Ingredients</a>
+                            <a className="nav-link" href="/">Ingredients</a>
                         </li>
                         <li>
-                            <a className="nav-link" href="#">Cocktails</a>
+                            <a className="nav-link" href="/">Cocktails</a>
                         </li>
                         <li>
-                            <a className="nav-link" href="#">Cocktail Details</a>
+                            <a className="nav-link" href="/">Cocktail Details</a>
                         </li>
                     </ul>
                 </nav>
