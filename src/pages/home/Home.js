@@ -1,6 +1,7 @@
 import React from 'react';
-import ingredients from "../data/ingredients.json";
-import Ingredient from "../components/Ingredient";
+import ingredients from "../../data/ingredients.json";
+import Ingredient from "../../components/Ingredient";
+import Sidebar from "../../components/Sidebar";
 
 function Home() {
 
@@ -61,32 +62,35 @@ function Home() {
     createIngredientsIndexColumn();
 
     return (
-        <main className="main inner-container">
-            <h2>Ingredient Index</h2>
-            <h3>Cocktail recepten op een rijtje</h3>
-            <p>
-                Hieronder vind je meer dan 300 cocktailrecepten. Allemaal vers gemaakt en sommige zelfbedacht.
-                Allerlei soorten cocktailrecepten. Met vers fruit, zoet, zuur, sterk, kruidig, spicey.
-                Longdrinks,
-                martini’s, margarita’s, mojito’s, sours, gin tonics, you name it. Alle varianten staan ertussen
-                en we hebben ze allemaal zelf gemaakt en uitgeprobeerd. Er zit vast iets tussen waar je zin in
-                hebt.
-                Proost!
-            </p>
-            <h3>Nieuwe cocktail recepten</h3>
-            <p>
-                Deze pagina wordt constant bijgehouden met de nieuwste cocktail recepten, die we uiteraard ook
-                eerst
-                zelf
-                uitproberen. Als je zelf nog cocktail recepten hebt die jij de moeite waard vindt voor onze
-                website,
-                mail dan naar cocktails@cocktailicious.nl
-            </p>
-            <h3>Cocktails op alfabetische volgorde</h3>
-            <div className="ingredients-container outer-container">
-                {ingredientsIndexColumn}
-            </div>
-        </main>
+        <>
+            <main className="main inner-container">
+                <h2>Ingredient Index</h2>
+                <h3>Cocktail recepten op een rijtje</h3>
+                <p>
+                    Hieronder vind je meer dan 300 cocktailrecepten. Allemaal vers gemaakt en sommige zelfbedacht.
+                    Allerlei soorten cocktailrecepten. Met vers fruit, zoet, zuur, sterk, kruidig, spicey.
+                    Longdrinks,
+                    martini’s, margarita’s, mojito’s, sours, gin tonics, you name it. Alle varianten staan ertussen
+                    en we hebben ze allemaal zelf gemaakt en uitgeprobeerd. Er zit vast iets tussen waar je zin in
+                    hebt.
+                    Proost!
+                </p>
+                <h3>Nieuwe cocktail recepten</h3>
+                <p>
+                    Deze pagina wordt constant bijgehouden met de nieuwste cocktail recepten, die we uiteraard ook
+                    eerst
+                    zelf
+                    uitproberen. Als je zelf nog cocktail recepten hebt die jij de moeite waard vindt voor onze
+                    website,
+                    mail dan naar cocktails@cocktailicious.nl
+                </p>
+                <h3>Cocktails op alfabetische volgorde</h3>
+                <div className="ingredients-container outer-container">
+                    {ingredientsIndexColumn}
+                </div>
+            </main>
+            <Sidebar/>
+        </>
     );
 }
 

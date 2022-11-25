@@ -1,0 +1,40 @@
+.cocktail-container {
+    justify-content: space-between;
+    min-height: 560px;
+}
+
+.left {
+    width: 100%;
+}
+
+.right {
+    width: 100%;
+}
+
+figcaption {
+    font-size: 30px;
+    text-align: center;
+    color: var(--charcoal);
+}
+
+img {
+    width: 100%;
+}
+
+.right h4 {
+    text-align: left;
+}
+
+.right ul {
+    margin-bottom: 30px;
+}
+
+@media screen and (min-width: 900px) {
+    .left {
+        flex-basis: 600px;
+    }
+
+    .right {
+        flex-basis: 260px;
+    }
+}
