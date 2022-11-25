@@ -152,11 +152,18 @@ h1 {
     font-size: 10px;
     letter-spacing: 2px;
     font-weight: 100;
+}
+
+.nav-menu .default-menu-link{
     text-decoration: none;
 }
 
-.nav-menu a:hover {
+.nav-menu .default-menu-link:hover {
     color: var(--dark-sea-green);
+    text-decoration: underline;
+}
+
+.nav-menu .active-menu-link {
     text-decoration: underline;
 }
 

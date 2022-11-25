@@ -10,13 +10,13 @@ function Header(){
                 <nav className="navbar">
                     <ul className="nav-menu">
                         <li>
-                            <NavLink className="nav-link" to="/">Ingredients</NavLink>
+                            <NavLink className={({ isActive }) => isActive ? "active-menu-link" : "default-menu-link"} to="/">Ingredients</NavLink>
                         </li>
                         <li>
-                            <NavLink className="nav-link" to="/cocktails">Cocktails</NavLink>
+                            <NavLink className={({ isActive }) => isActive ? "active-menu-link" : "default-menu-link"} to="/cocktails">Cocktails</NavLink>
                         </li>
                         <li>
-                            <NavLink className="nav-link" to="/cocktail-details">Cocktail Details</NavLink>
+                            <NavLink className={({ isActive }) => isActive ? "active-menu-link" : "default-menu-link"} to="/cocktail-details">Cocktail Details</NavLink>
                         </li>
                     </ul>
                 </nav>

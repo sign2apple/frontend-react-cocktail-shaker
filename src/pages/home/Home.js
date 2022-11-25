@@ -1,11 +1,13 @@
-import React from 'react';
-import ingredients from "../../data/ingredients.json";
+import React, {useEffect, useState} from 'react';
+import axios from "axios";
 import Ingredient from "../../components/Ingredient";
 import Sidebar from "../../components/Sidebar";
 
 function Home() {
 
-    const ingredientNames = ingredients.drinks.map((ingredient) => {
+    const [ingredientsData, setIngredientsData] = useState([]);
+
+    const ingredientNames = ingredientsData.map((ingredient) => {
         return ingredient.strIngredient1.toLowerCase();
     });
 
@@ -17,6 +19,21 @@ function Home() {
     let ingredientByCharacterList = [];
     const numberOfColumns = 3;
     const ingredientsIndexColumn = [];
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_API_KEY}/list.php?i=list`);
+                console.log(result.data.drinks);
+                setIngredientsData(result.data.drinks);
+            } catch (e) {
+                console.error(e);
+            }
+        };
+        fetchData();
+    }, []);
+
+
 
     function createIngredientsList(character) {
         ingredientNamesSorted.forEach((ingredientName) => {
@@ -58,6 +75,7 @@ function Home() {
             ingredientByCharacterList = [];
         }
     }
+
 
     createIngredientsIndexColumn();
 
