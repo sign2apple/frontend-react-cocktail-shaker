@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-    Routes,
-    Route,
-} from "react-router-dom";
-import Header from './components/Header';
+import { Routes, Route } from "react-router-dom";
 import './App.css';
 import Home from "./pages/home/Home";
 import Cocktails from "./pages/cocktails/Cocktails";
@@ -13,19 +9,11 @@ function App() {
 
     return (
         <>
-            <Header/>
-            <div className="middle outer-container">
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/cocktails" element={<Cocktails/>}/>
                     <Route path="/cocktail-details" element={<CocktailDetails/>}/>
                 </Routes>
-            </div>
-            <footer id="footer" className="outer-container">
-                <div className="footer-content inner-container">
-                    In opdracht van NOVI Hogeschool © 2022
-                </div>
-            </footer>
         </>
     );
 }

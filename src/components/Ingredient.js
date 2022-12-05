@@ -1,18 +1,11 @@
 import React from "react";
 
-function Ingredient({name}){
-
-    function logIngredient(e){
-        e.preventDefault();
-        console.log(name);
-    }
+function Ingredient({ name }){
 
     return (
-
-        <li key={name}>
-            <a href="/" onClick={logIngredient}>{name}</a>
+        <li>
+            <button>{name}</button>
         </li>
-
     )
 }
 
