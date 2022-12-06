@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 function Sidebar({selectedIngredients,title}){
 
@@ -11,6 +12,9 @@ function Sidebar({selectedIngredients,title}){
                         <li key={selectedIngredient}>{selectedIngredient}</li>
                     ))}
                 </ul>
+                    <Link to={`/cocktails/${selectedIngredients[0]}`}>
+                         <button type="button">Search Cocktails</button>
+                    </Link>
             </div>
         </aside>
     )
