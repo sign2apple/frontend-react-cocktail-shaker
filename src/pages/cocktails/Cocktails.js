@@ -1,19 +1,25 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import '../../App.css';
 import './Cocktails.css';
 // import Sidebar from "../../components/Sidebar";
+
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import axios from "axios";
+import {Link} from "react-router-dom";
+import {SelectedIngredientsContext} from "../../context/SelectedIngredientsContextProvider";
+import Sidebar from "../../components/Sidebar";
 
 function Cocktails() {
 
     const [cocktailsData, setCocktailsData] = useState([]);
+    const {selectedIngredient} = useContext(SelectedIngredientsContext);
 
     useEffect(() => {
         async function fetchData() {
             try {
-                const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_API_KEY}/search.php?f=a`);
+                const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_API_KEY}/filter.php?i=${selectedIngredient}`);
+                // const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_API_KEY}/search.php?f=a`);
                 console.log(result.data.drinks);
                 setCocktailsData(result.data.drinks);
             } catch (e) {
@@ -22,7 +28,7 @@ function Cocktails() {
         }
 
         fetchData();
-    }, []);
+    }, [selectedIngredient]);
 
     return (
         <>
@@ -30,15 +36,19 @@ function Cocktails() {
             <div className="middle outer-container">
                 <main className="main inner-container">
                     <div className="cocktails-container outer-container">
-                        {cocktailsData.map(({strDrink, strDrinkThumb}) =>
+                        {cocktailsData.map(({idDrink, strDrink, strDrinkThumb}) =>
+
                             <figure key={strDrink} className="cocktail inner-container">
+                                <Link to={`/cocktail-details/${idDrink}`}>
                                 <img src={strDrinkThumb} alt={strDrink}/>
                                 <figcaption>{strDrink}</figcaption>
+                                </Link>
                             </figure>
+
                         )}
                     </div>
                 </main>
-                {/*<Sidebar title="Ingredients" />*/}
+                <Sidebar title="Selected Ingredients" selectedIngredient={selectedIngredient} />
             </div>
             <Footer/>
         </>

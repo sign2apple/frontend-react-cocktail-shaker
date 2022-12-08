@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {useParams} from "react-router-dom";
 import axios from "axios";
 import '../../App.css';
 // import Sidebar from '../../components/Sidebar';
@@ -8,21 +9,25 @@ import Footer from "../../components/Footer";
 
 function CocktailDetails() {
 
+    const {id} = useParams();
+
     const [cocktailData, setCocktailData] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
             try {
-                const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_API_KEY}/lookup.php?i=11007`);
+                const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_API_KEY}/lookup.php?i=${id}`);
                 console.log(result.data.drinks);
                 setCocktailData(result.data.drinks);
             } catch (e) {
                 console.error(e);
             }
         }
+        if (id){
+            fetchData();
+        }
 
-        fetchData();
-    }, []);
+    }, [id]);
 
 
     return (

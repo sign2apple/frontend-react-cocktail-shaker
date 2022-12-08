@@ -1,4 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
+import {SelectedIngredientsContext} from "../../context/SelectedIngredientsContextProvider";
 import axios from "axios";
 // import Ingredient from "../../components/Ingredient";
 import Sidebar from "../../components/Sidebar";
@@ -9,6 +10,8 @@ function Home() {
 
     const [ingredientsData, setIngredientsData] = useState([]);
     const [selectedIngredients, setSelectedIngredients] = useState([]);
+
+    const {selectedIngredient} = useContext(SelectedIngredientsContext);
 
     const ingredientNames = ingredientsData.map((ingredient) => {
         return ingredient.strIngredient1.toLowerCase();
@@ -128,7 +131,8 @@ function Home() {
                         {ingredientsIndexColumn}
                     </div>
                 </main>
-                <Sidebar title="Ingredients" selectedIngredients={selectedIngredients} />
+                {/*<Sidebar title="Selected Ingredients" selectedIngredients={selectedIngredients} />*/}
+                <Sidebar title="Selected Ingredients" selectedIngredient={selectedIngredient} />
             </div>
             <Footer/>
         </>

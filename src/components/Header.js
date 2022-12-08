@@ -9,14 +9,11 @@ function Header(){
                 <h1>The Cocktail Shaker</h1>
                 <nav className="navbar">
                     <ul className="nav-menu">
-                        <li key="home">
+                        <li>
                             <NavLink className={({ isActive }) => isActive ? "active-menu-link" : "default-menu-link"} to="/">Ingredients</NavLink>
                         </li>
-                        <li key="cocktails">
-                            <NavLink className={({ isActive }) => isActive ? "active-menu-link" : "default-menu-link"} to="/cocktails">Cocktails</NavLink>
-                        </li>
-                        <li key="cocktail-details">
-                            <NavLink className={({ isActive }) => isActive ? "active-menu-link" : "default-menu-link"} to="/cocktail-details">Cocktail Details</NavLink>
+                        <li>
+                            <NavLink className={({ isActive }) => isActive ? "active-menu-link" : "default-menu-link"} to="/cocktails/">Cocktails</NavLink>
                         </li>
                     </ul>
                 </nav>

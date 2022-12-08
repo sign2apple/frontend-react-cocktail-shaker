@@ -4,13 +4,16 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import SelectedIngredientsContextProvider from "./context/SelectedIngredientsContextProvider";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <Router>
-          <App />
-      </Router>
+      <SelectedIngredientsContextProvider>
+        <Router>
+            <App />
+        </Router>
+      </SelectedIngredientsContextProvider>
    </React.StrictMode>
 );
 
