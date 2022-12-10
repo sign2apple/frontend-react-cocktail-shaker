@@ -13,14 +13,15 @@ import Sidebar from "../../components/Sidebar";
 function Cocktails() {
 
     const [cocktailsData, setCocktailsData] = useState([]);
-    const {selectedIngredient} = useContext(SelectedIngredientsContext);
+    const selectedIngredients = useContext(SelectedIngredientsContext);
 
     useEffect(() => {
         async function fetchData() {
             try {
-                const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_API_KEY}/filter.php?i=${selectedIngredient}`);
+                const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_API_KEY}/filter.php?i=${selectedIngredients}`);
                 // const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_API_KEY}/search.php?f=a`);
                 console.log(result.data.drinks);
+                console.log(selectedIngredients);
                 setCocktailsData(result.data.drinks);
             } catch (e) {
                 console.error(e);
@@ -28,7 +29,7 @@ function Cocktails() {
         }
 
         fetchData();
-    }, [selectedIngredient]);
+    }, [selectedIngredients]);
 
     return (
         <>
@@ -48,7 +49,7 @@ function Cocktails() {
                         )}
                     </div>
                 </main>
-                <Sidebar title="Selected Ingredients" selectedIngredient={selectedIngredient} />
+                <Sidebar title="Selected Ingredients" selectedIngredients={selectedIngredients} />
             </div>
             <Footer/>
         </>

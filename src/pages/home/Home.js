@@ -9,9 +9,9 @@ import Footer from "../../components/Footer";
 function Home() {
 
     const [ingredientsData, setIngredientsData] = useState([]);
-    const [selectedIngredients, setSelectedIngredients] = useState([]);
+    // const [selectedIngredients, setSelectedIngredients] = useState([]);
 
-    const {selectedIngredient} = useContext(SelectedIngredientsContext);
+    const selectedIngredients = useContext(SelectedIngredientsContext);
 
     const ingredientNames = ingredientsData.map((ingredient) => {
         return ingredient.strIngredient1.toLowerCase();
@@ -95,7 +95,7 @@ function Home() {
     function handleClick(e, ingredientName) {
         e.preventDefault();
         console.log(ingredientName);
-        setSelectedIngredients(selectedIngredients => [...selectedIngredients, ingredientName]);
+        // setSelectedIngredients(selectedIngredients => [...selectedIngredients, ingredientName]);
         console.log(selectedIngredients);
     }
 
@@ -131,8 +131,7 @@ function Home() {
                         {ingredientsIndexColumn}
                     </div>
                 </main>
-                {/*<Sidebar title="Selected Ingredients" selectedIngredients={selectedIngredients} />*/}
-                <Sidebar title="Selected Ingredients" selectedIngredient={selectedIngredient} />
+                <Sidebar title="Selected Ingredients" selectedIngredients={selectedIngredients} />
             </div>
             <Footer/>
         </>
