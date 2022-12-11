@@ -1,3 +1,4 @@
+// import React, {useEffect, useState, useContext} from 'react';
 import React, {useEffect, useState, useContext} from 'react';
 import {SelectedIngredientsContext} from "../../context/SelectedIngredientsContextProvider";
 import axios from "axios";
@@ -10,8 +11,7 @@ function Home() {
 
     const [ingredientsData, setIngredientsData] = useState([]);
     // const [selectedIngredients, setSelectedIngredients] = useState([]);
-
-    const selectedIngredients = useContext(SelectedIngredientsContext);
+    const { bla } = useContext(SelectedIngredientsContext);
 
     const ingredientNames = ingredientsData.map((ingredient) => {
         return ingredient.strIngredient1.toLowerCase();
@@ -45,14 +45,15 @@ function Home() {
                 if (character === "#" && ingredientName.charAt(0) >= "0" && ingredientName.charAt(0) <= "9") {
                     ingredientsList.push(
                         <li key={ingredientName}>
-                            <button type="button" id={ingredientName} disabled={selectedIngredients.includes(ingredientName)} onClick={e => handleClick(e, ingredientName)}>{ingredientName}</button>
+                            {/*<button type="button" id={ingredientName} disabled={selectedIngredients.includes(ingredientName)} onClick={e => handleClick(e, ingredientName)}>{ingredientName}</button>*/}
                         </li>
                     );
                 } else if (ingredientName.charAt(0) === character) {
                     ingredientsList.push(
                          <li key={ingredientName}>
-                            <button type="button" id={ingredientName} disabled={selectedIngredients.includes(ingredientName)} onClick={e => handleClick(e, ingredientName)}>{ingredientName}</button>
-                        </li>
+                            {/*<button type="button" id={ingredientName} disabled={selectedIngredients.includes(ingredientName)} onClick={e => handleClick(e, ingredientName)}>{ingredientName}</button>*/}
+                            <button type="button" id={ingredientName} onClick={e => handleClick(e, ingredientName)}>{ingredientName}</button>
+                         </li>
                     );
                 }
             }
@@ -96,10 +97,16 @@ function Home() {
         e.preventDefault();
         console.log(ingredientName);
         // setSelectedIngredients(selectedIngredients => [...selectedIngredients, ingredientName]);
-        console.log(selectedIngredients);
+        //selectedIngredients.push(ingredientName);
+        // setTempIngredient(ingredientName);
+        // console.log(tempIngredient);
+        // console.log(selectedIngredients);
+        // tempIngredients.push(ingredientName);
+        bla(ingredientName);
     }
 
     createIngredientsIndexColumn();
+
 
     return (
         <>
@@ -131,10 +138,11 @@ function Home() {
                         {ingredientsIndexColumn}
                     </div>
                 </main>
-                <Sidebar title="Selected Ingredients" selectedIngredients={selectedIngredients} />
+                <Sidebar title="Selected Ingredients"/>
             </div>
             <Footer/>
         </>
+
     );
 }
 
