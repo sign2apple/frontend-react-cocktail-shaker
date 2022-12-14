@@ -3,20 +3,33 @@ import React, {createContext, useState} from 'react';
 export const SelectedIngredientsContext = createContext(null);
 
 function SelectedIngredientsContextProvider({children}) {
-    const [ingredientName, setIngredientName] = useState();
+    const [selectedIngredients, setSelectedIngredients] = useState([]);
+    // const [updated, setUpdated] = useState(false);
 
 
-    const selectedIngredients = {
-        bla: bla,
-        ingredientName: ingredientName,
-    };
+    const ingredientsData = {
+        addIngredient: addIngredient,
+        removeIngredient: removeIngredient,
+        selectedIngredients: selectedIngredients
+    }
 
-    function bla(ingredientName) {
-        setIngredientName(ingredientName);
+    function addIngredient(ingredientName){
+        // setIngredientNames(ingredientNames);
+        // setSelectedIngredients(selectedIngredients.push(ingredientName));
+        setSelectedIngredients(ingredientNames => [...ingredientNames, ingredientName]);
+        // setUpdated(true);
+    }
+
+    function removeIngredient(ingredientName){
+        setSelectedIngredients((current) =>
+            current.filter((selectedIngredient) => selectedIngredient !== ingredientName)
+        );
+        // setUpdated(true);
     }
 
     return (
-        <SelectedIngredientsContext.Provider value={selectedIngredients}>
+        <SelectedIngredientsContext.Provider value={ingredientsData}>
+            {/*{setSelectedIngredients.length === 0 ? children : <p>Loading...</p>}*/}
             {children}
         </SelectedIngredientsContext.Provider>
     )

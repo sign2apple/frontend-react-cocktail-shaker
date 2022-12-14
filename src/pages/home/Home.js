@@ -1,8 +1,6 @@
-// import React, {useEffect, useState, useContext} from 'react';
 import React, {useEffect, useState, useContext} from 'react';
 import {SelectedIngredientsContext} from "../../context/SelectedIngredientsContextProvider";
 import axios from "axios";
-// import Ingredient from "../../components/Ingredient";
 import Sidebar from "../../components/Sidebar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -10,8 +8,10 @@ import Footer from "../../components/Footer";
 function Home() {
 
     const [ingredientsData, setIngredientsData] = useState([]);
-    // const [selectedIngredients, setSelectedIngredients] = useState([]);
-    const { bla } = useContext(SelectedIngredientsContext);
+    const [error, toggleError] = useState(false);
+    const [loading, toggleLoading] = useState(false);
+
+    const {addIngredient, removeIngredient, selectedIngredients} = useContext(SelectedIngredientsContext);
 
     const ingredientNames = ingredientsData.map((ingredient) => {
         return ingredient.strIngredient1.toLowerCase();
@@ -29,31 +29,83 @@ function Home() {
     useEffect(() => {
         async function fetchData() {
             try {
+                toggleError(false);
+                toggleLoading(true);
                 const result = await axios.get(`https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_API_KEY}/list.php?i=list`);
                 console.log(result.data.drinks);
                 setIngredientsData(result.data.drinks);
             } catch (e) {
                 console.error(e);
+                toggleError(true);
             }
+            toggleLoading(false);
         }
 
         fetchData();
     }, []);
 
+    useEffect(() => {
+        // console.log("selected ingredients has changed!:");
+        // console.log(selectedIngredients[0]);
+        // setRender(true);
+        // setChecked(true);
+    }, [selectedIngredients]);
+
+    // function sortIngredients() {
+    //     if (ingredientsData.length > 0) {
+    //
+    //         const ingredientNames = ingredientsData.map((ingredient) => {
+    //             return ingredient.strIngredient1.toLowerCase();
+    //         });
+    //         return ingredientNames.sort();
+    //     }
+    //     else toggleError(true);
+    // }
+
     function createIngredientsList(character) {
+        // const ingredientNamesSorted = sortIngredients();
         ingredientNamesSorted.forEach((ingredientName) => {
                 if (character === "#" && ingredientName.charAt(0) >= "0" && ingredientName.charAt(0) <= "9") {
                     ingredientsList.push(
                         <li key={ingredientName}>
-                            {/*<button type="button" id={ingredientName} disabled={selectedIngredients.includes(ingredientName)} onClick={e => handleClick(e, ingredientName)}>{ingredientName}</button>*/}
+                            {/*
+                                Below code does not work as I expected:
+
+                                <input id={ingredientName} name={ingredientName} type="checkbox"
+                                    defaultChecked={selectedIngredients.includes(ingredientName)}
+                                    onChange={e => handleClick(e, ingredientName)}
+                                />
+
+                                When an ingredient is removed from the sidebar
+                                the checkbox on the ingredients index stays checked.
+                                It should be unchecked, but dit does not happen.
+                                Solved this using this ugly workaround below:
+                            */}
+
+                            {/* Workaround code */}
+                            {selectedIngredients.includes(ingredientName) &&
+                                <input id={ingredientName} name={ingredientName} type="checkbox" defaultChecked={true}
+                                       onChange={e => handleClick(e, ingredientName)}/>}
+                            {!selectedIngredients.includes(ingredientName) &&
+                                <input id={ingredientName} name={ingredientName} type="checkbox" defaultChecked={false}
+                                       onChange={e => handleClick(e, ingredientName)}/>}
+                            {/* End workaround*/}
+
+                            {console.log(ingredientName + ": " + selectedIngredients.includes(ingredientName))}
+                            {ingredientName}
                         </li>
                     );
                 } else if (ingredientName.charAt(0) === character) {
                     ingredientsList.push(
-                         <li key={ingredientName}>
-                            {/*<button type="button" id={ingredientName} disabled={selectedIngredients.includes(ingredientName)} onClick={e => handleClick(e, ingredientName)}>{ingredientName}</button>*/}
-                            <button type="button" id={ingredientName} onClick={e => handleClick(e, ingredientName)}>{ingredientName}</button>
-                         </li>
+                        <li key={ingredientName}>
+                            {selectedIngredients.includes(ingredientName) &&
+                                <input id={ingredientName} name={ingredientName} type="checkbox" defaultChecked={true}
+                                       onChange={e => handleClick(e, ingredientName)}/>}
+                            {!selectedIngredients.includes(ingredientName) &&
+                                <input id={ingredientName} name={ingredientName} type="checkbox" defaultChecked={false}
+                                       onChange={e => handleClick(e, ingredientName)}/>}
+                            {ingredientName}
+                        </li>
                     );
                 }
             }
@@ -94,19 +146,12 @@ function Home() {
     }
 
     function handleClick(e, ingredientName) {
-        e.preventDefault();
-        console.log(ingredientName);
-        // setSelectedIngredients(selectedIngredients => [...selectedIngredients, ingredientName]);
-        //selectedIngredients.push(ingredientName);
-        // setTempIngredient(ingredientName);
-        // console.log(tempIngredient);
-        // console.log(selectedIngredients);
-        // tempIngredients.push(ingredientName);
-        bla(ingredientName);
+        if (e.currentTarget.checked) {
+            addIngredient(ingredientName);
+        } else {
+            removeIngredient(ingredientName);
+        }
     }
-
-    createIngredientsIndexColumn();
-
 
     return (
         <>
@@ -135,14 +180,20 @@ function Home() {
                     </p>
                     <h3>Cocktails op alfabetische volgorde</h3>
                     <div className="ingredients-container outer-container">
+                        {createIngredientsIndexColumn()}
                         {ingredientsIndexColumn}
+
+                    </div>
+                    <div>
+                        {error && <span>Het ophalen van de ingrediënten is mislukt. Probeer het opnieuw.</span>}
+                        {loading && (<span>Loading...</span>)}
                     </div>
                 </main>
                 <Sidebar title="Selected Ingredients"/>
             </div>
             <Footer/>
+            {/*{console.log("page rendered")}*/}
         </>
-
     );
 }
 

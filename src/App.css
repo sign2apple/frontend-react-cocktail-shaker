@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
 /*////////////////////////
     Table of Contents
     1. Global Styles
@@ -115,6 +116,11 @@ a:hover {
     text-decoration: underline;
 }
 
+input {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
 /* ------------------------------- 4. Areas ---------------------------------------- */
 
 /* --------------- 4.1 Header ------------------------- */
@@ -223,7 +229,7 @@ h1 {
 }
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1200px) {
     h1 {
         font-size: 65px;
     }
